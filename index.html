@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="robots" content="noindex, nofollow">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>invoice-name-month</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="icon" href="/assets/imgs/fav.ico" type="image/x-icon" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="/assets/css/invoicebuilder.css" rel="stylesheet" />
+    <script src="/assets/js/invoicebuilder.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="invoice-title">INVOICE</div>
+      </div>
+      <div class="parent">
+        <div class="section">
+          <div class="section-title">From:</div>
+          <input
+            class="heavy"
+            type="text"
+            id="nameInp"
+            name="name"
+            placeholder="Enter your name"
+            value="John Doe"
+          /><br />
+          <label for="address">Address:</label><br />
+          <input id="addr1Inp" name="address" placeholder="Address Line 1" />
+          <input
+            id="addr2Inp"
+            name="address2"
+            placeholder="Address Line 2"
+          /><br />
+          <label for="phone">Phone:</label><br />
+          <input
+            type="tel"
+            id="phoneInp"
+            name="phone"
+            placeholder="Enter your phone number"
+          /><br />
+          <label for="email">Email:</label><br />
+          <input
+            type="email"
+            id="emailInp"
+            name="email"
+            placeholder="Enter your email address"
+          /><br />
+          <input
+            type="text"
+            id="extraInp"
+            name="extra"
+            placeholder="Extra info (optional)"
+          /><br />
+        </div>
+        <div class="section">
+          <div class="section-title">Bill To:</div>
+          <input
+            class="heavy"
+            type="text"
+            id="companyNameInp"
+            name="companyName"
+            value="Digital BV"
+          /><br />
+          <input
+            type="text"
+            id="companyStreetInp"
+            name="street"
+            value="Vorkstraat 22"
+          /><br />
+          <input
+            type="text"
+            id="companyCityInp"
+            name="city"
+            value="9000 gent"
+          /><br />
+          <input
+            type="text"
+            id="companyCountryInp"
+            name="country"
+            value="Belgium"
+          /><br />
+          <label for="vat">VAT:</label>
+          <input
+            type="text"
+            id="companyVatInp"
+            name="vat"
+            value="BE0753556871"
+          /><br />
+        </div>
+      </div>
+      <div class="invoice-box">
+        <div>
+          <p>
+            Invoice #:
+            <input
+              type="text"
+              id="invnoInp"
+              name="invoice-number"
+              placeholder="0001"
+            />
+          </p>
+          <p>
+            Invoice date:
+            <input type="date" id="invoiceDate" name="invoice-date" value="" />
+          </p>
+          <p class="no-print">
+            Invoice currency:
+            <select id="currencyInp" name="currency">
+              <option value="₹">INR</option>
+              <option value="€">EUR</option>
+              <option value="$">USD</option>
+            </select>
+          </p>
+        </div>
+        <div>
+          <p><strong>Amount due:</strong></p>
+          <p class="text-right">
+            <strong
+              ><span class="grand-total">0</span
+              ><span class="currency">₹</span></strong
+            >
+          </p>
+        </div>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Description</th>
+            <th>SAC Code</th>
+            <th>Quantity</th>
+            <th>Unit Price</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <span class="remove-row">-</span>
+              <input
+                type="text"
+                id="desc1Inp"
+                placeholder="Line description"
+              />
+            </td>
+            <td><input type="text" value="998314" placeholder="______" /></td>
+            <td>
+              <input
+                class="input-qty-cell"
+                type="text"
+                value="1"
+                placeholder="Enter QTY"
+                pattern="^[0-9]+$"
+              />
+            </td>
+            <td>
+              <input
+                class="input-price-cell"
+                type="text"
+                value="0"
+                placeholder="Enter Price"
+                pattern="^[0-9]+$"
+              /><span class="currency">₹</span>
+            </td>
+            <td>
+              <span class="line-total">0</span><span class="currency">₹</span>
+            </td>
+          </tr>
+          <tr class="last-row">
+            <td class="last-row-first-col" colspan="4">
+              <span class="add-row">+</span>Total
+            </td>
+            <td class="total">
+              <span class="grand-total">0</span><span class="currency">₹</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="section">
+        <!-- Bank account details PAN, Bank Acc no, Acc holder Name, IFSC code, Bank Name and a declaration that says the person themselves are responsible for their own income tax filings -->
+        <div class="section-title">Bank Account Details:</div>
+        <label for="panInp">PAN number:</label>
+        <input
+          type="text"
+          id="panInp"
+          name="pan"
+          placeholder="Enter your PAN number"
+        /><br />
+        <label for="bankAccNoInp">Bank Account Number:</label>
+        <input
+          type="text"
+          id="bankAccNoInp"
+          name="bankAccNo"
+          placeholder="Enter your Bank Account Number"
+        /><br />
+        <label for="accHolderNameInp">Account Holder Name:</label>
+        <input
+          type="text"
+          id="accHolderNameInp"
+          name="accHolderName"
+          placeholder="Enter your Account Holder Name"
+        /><br />
+        <label for="ifscCodeInp">IFSC Code:</label>
+        <input
+          type="text"
+          id="ifscCodeInp"
+          name="ifscCode"
+          placeholder="Enter your IFSC Code"
+        /><br />
+        <label for="bankNameInp">Bank Name:</label>
+        <input
+          type="text"
+          id="bankNameInp"
+          name="bankName"
+          placeholder="Enter your Bank Name"
+        /><br />
+        <p>
+          I hereby solemnly affirm and declare that the information furnished
+          above is accurate and complete to the best of my knowledge and belief.
+          I acknowledge that I am solely responsible for compliance with all
+          applicable tax laws, including the filing of returns and payment of
+          taxes to the Income Tax Department of India.
+        </p>
+      </div>
+      <div class="footer no-print">
+        <button class="action-button" onclick="window.print()">
+          Print this invoice
+        </button>
+        <button
+          class="action-button"
+          onclick="localStorage.clear(); location.reload();"
+        >
+          Clear saved data
+        </button>
+        <div class="file-wrapper">
+          <label class="file-label" for="file">Import data:</label>
+          <input type="file" id="file" name="file" placeholder="import data" />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
